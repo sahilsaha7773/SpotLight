@@ -1,0 +1,45 @@
+.loginCard {
+  /* box-shadow: 8px 10px 20px rgba(255, 255, 255, 0.2); */
+  width: fit-content;
+  margin: 100px auto;
+  padding: 60px 80px;
+  border-radius: 20px;
+  max-width: 500px;
+}
+
+.loginBtn {
+  background-color: #1DB954;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+  border: 0;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.1s ease-in;
+}
+.loginBtn:hover {
+  background-color: #17171a;
+  color:white;
+  border: 2px solid #FFF;
+  cursor: pointer;
+}
+.loginBtn>i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.underline {
+  border-radius: 8px;
+  border: none;
+  height: 10px;
+  width: 100px;
+  background: #58ba55;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #c1c1c1;
+  /* opacity: 0.5; */
+}

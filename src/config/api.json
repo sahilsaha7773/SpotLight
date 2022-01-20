@@ -1,0 +1,6 @@
+{
+  "BASE_URL": "https://api.spotify.com/v1",
+  "CLIENT_ID": "294fc0e8259841c38e59901f6977c1ef",
+  "CLIENT_SECRET": "6a01258443214050916f6cfce3e12253",
+  "REDIRECT_URI": "http://localhost:3000"
+}
