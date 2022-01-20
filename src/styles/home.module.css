@@ -1,0 +1,94 @@
+.topArtists {
+  display:flex;
+  margin:0 0 40px 0;
+  overflow-x: scroll;
+}
+
+.artistCard {
+  margin: 20px;
+  position: relative;
+}
+
+.artistImage {
+  max-width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.topGradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 10px;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+.bottomGradient {
+  
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 0 0 20px 20px;
+  padding: 20px 10px;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0));
+
+}
+
+.topSongs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.songCard {
+  display: flex;
+  margin: 20px 20px;
+  border-radius: 20px;
+  width: 45%;
+  padding: 20px;
+  background-color: rgb(39, 39, 39); 
+}
+
+.songImage {
+  width: 200px;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.songControl > .audioBtn {
+  visibility: hidden;
+}
+.songControl:hover .audioBtn {
+  visibility: visible;
+}
+
+.playOnSpot {
+  padding: 10px;
+  /* border: 2px solid; */
+  /* background: #58ba55; */
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+.playOnSpot > i {
+  margin-left: 5px;
+}
+.playOnSpot:hover {
+  background: #58ba55;
+  cursor: pointer;
+}
+
+.profileCard {
+  text-align: center;
+  margin: 0 40px;
+  /* position: fixed; */
+}

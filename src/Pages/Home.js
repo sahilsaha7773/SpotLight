@@ -5,6 +5,7 @@ import api from '../config/api.json';
 import Avatar from 'react-avatar';
 import millify from 'millify';
 import styles from '../styles/home.module.css';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -20,6 +21,9 @@ function Home() {
   const [topArtists, setTopArtists] = useState();
   const [topTracks, setTopTracks] = useState();
   const [genresMap, setGenresMap] = useState(new Map());
+  const [play, setPlay] = useState(-1);
+  const [audio, setAudio] = useState(new Audio());
+  const [genCount, setGenCount] = useState(0);
 
   // Get User Profile and Store in local storage 
   const getMe = () => {
@@ -85,8 +89,10 @@ function Home() {
   useEffect(() => {
     const genMap = new Map();
     var items = topArtists?.items;
+    var a = genCount;
     for (let i = 0; i < items?.length; i++) {
       var gen = items[i].genres;
+      a = a + gen.length;
       for (let j = 0; j < gen.length; j++) {
         var prevCount = genMap.get(gen[j]);
         if (prevCount === undefined)
@@ -95,104 +101,115 @@ function Home() {
       }
     }
     setGenresMap(genMap);
+    setGenCount(a);
     console.log(genMap.entries());
   }, [topArtists]);
   return (
     <div>
-      <Avatar style={{
-        marginTop: "60px",
-        border: "8px solid white"
-      }} name={user?.display_name} src={user?.images[0]?.url} size={200} round={true} />
-      <h1 style={{
-        margin: "20px",
-        fontSize: "40px"
-      }}>{user?.display_name}</h1>
-      <h2>{(user?.followers?.total)} Followers</h2>
+
+      <div style={{
+        textAlign: "left",
+        margin: "40px",
+        // display: "grid",
+        // overflow: "scroll",
+        // gridTemplateColumns: "auto auto"
+      }}>
+        <div className={styles.profileCard}>
+          <Avatar style={{
+            marginTop: "60px",
+            border: "8px solid white"
+          }} name={user?.display_name} src={user?.images[0]?.url} size={200} round={true} />
+          <h1 style={{
+            margin: "20px",
+            fontSize: "40px"
+          }}>{user?.display_name}</h1>
+          <h2>{(user?.followers?.total)} Followers</h2>
+        </div>
+        <div>
+          <h1 style={{
+            margin: " 0 20px"
+
+          }}>Top Artists</h1>
+          <div className={styles.topArtists}>
+            {
+              topArtists?.items?.map((item, ind) => (
+                <div className={styles.artistCard + " zoom"}>
+                  <img src={item?.images[0]?.url} className={styles.artistImage} />
+                  <div className={styles.topGradient}>
+                    <h2 style={{
+                      margin: "0 0 20px 0"
+                    }}>{item.name}</h2>
+                  </div>
+                  <div className={styles.bottomGradient}>
+                    <h3 style={{
+                      margin: "0 0 !important"
+                    }}>{millify(item.followers.total)} Followers</h3>
+                    <h3 style={{
+                      margin: "10px 0"
+                    }}>
+                      {item.genres[0]}
+                    </h3>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
       <div style={{
         textAlign: "left",
         margin: "40px"
 
       }}>
-        <h1 style={{
-          margin: " 0 20px"
-
-        }}>Top Artists</h1>
-        <div style={{
-          display: 'flex',
-          // maxWidth: "1000px",
-          margin: "0 0 40px 0",
-          overflowX: 'scroll',
-        }}>
-          {
-            topArtists?.items?.map((item, ind) => (
-              <div style={{
-                margin: "20px",
-                position: "relative"
-              }} className='zoom'>
-                <img src={item?.images[0]?.url} style={{
-                  maxWidth: "300px",
-                  height: "300px",
-                  borderRadius: "20px",
-                  objectFit: "contain"
-                }} />
-                <div className='topGradient' style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  left: 0,
-                  borderRadius: "20px 20px 0 0",
-                  padding: "20px 10px",
-                  background: " linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0))"
-                }}>
-                  <h2 style={{
-                    margin: "0 0 20px 0"
-                  }}>{item.name}</h2>
-
-                </div>
-                <div style={{
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  left: 0,
-                  borderRadius: "0 0 20px 20px",
-                  padding: "20px 10px",
-                  background: " linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0))"
-                }}>
-                  <h3 style={{
-                    margin: "0 0 !important"
-                  }}>{millify(item.followers.total)} Followers</h3>
-                  <h3 style={{
-                    margin: "10px 0"
-                  }}>
-
-                    {item.genres[0]}
-                  </h3>
-                </div>
-              </div>
-            ))
-          }
-        </div>
         <h1>Top Songs</h1>
-        <div style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center"
-        }}>
+        <h3 style={{
+          margin: "10px 0",
+          opacity: "0.7"
+        }}>Click on the album image to listen to a 30 sec preview</h3>
+        <div className={styles.topSongs}>
           {topTracks?.items?.map((item, ind) => (
-            <div style={{
-              display: "flex",
-              margin: "40px 0",
-              width: "50%",
-              // background: "#000"
-            }}>
+            <div className={styles.songCard}>
 
               <h2>#{ind + 1}</h2>
-              <img src={item.album?.images[0]?.url} style={{
-                width: "200px",
-                borderRadius: "20px",
-                marginRight: "20px",
-                marginLeft: "20px"
-              }} />
+              <div style={{ position: 'relative' }} className={styles.songControl}>
+                <img src={item.album?.images[0]?.url} className={styles.songImage + " zoom"} onClick={() => {
+                  // var a = new Audio(item.preview_url);
+                  if (play === ind) {
+                    var a = audio;
+                    if (a.paused)
+                      a.play();
+                    else
+                      a.pause();
+                    setAudio(a);
+                    console.log(audio.paused);
+
+                    // setPlay(-1);
+                  } else {
+                    var a = audio;
+                    a.src = item.preview_url;
+                    setAudio(a);
+                    a.play();
+                    setPlay(ind);
+                    console.log(play);
+
+                  }
+                }} />
+                {(play === ind && audio.paused === false) ?
+                  <i className={styles.audioBtn + " fas fa-pause-circle"} style={{
+                    position: 'absolute',
+                    left: '40%',
+                    bottom: '45%',
+                    fontSize: "40px",
+                    textShadow: "rgb(0 0 0) 2px 2px 10px"
+                  }}></i> :
+                  <i className={styles.audioBtn + " fas fa-play-circle"} style={{
+                    position: 'absolute',
+                    left: '40%',
+                    bottom: '45%',
+                    fontSize: "40px",
+                    textShadow: "rgb(0 0 0) 2px 2px 10px"
+                  }}></i>}
+              </div>
               <div>
                 <h2>{item.name}</h2>
                 <h3 style={{
@@ -202,11 +219,15 @@ function Home() {
                     return (", " + artist.name);
                   else return (artist.name)
                 })}</h3>
+                <br />
+                <br />
+                <a href={item.external_urls.spotify} target="_blank" className={styles.playOnSpot}>Play on Spotify <i class="fab fa-spotify"></i></a>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {/* <ProgressBar completed={60} /> */}
     </div>
   )
 }
