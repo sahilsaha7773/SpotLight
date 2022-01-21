@@ -3,6 +3,8 @@ import styles from '../styles/login.module.css';
 import api from '../config/api.json';
 
 function Login() {
+  useEffect(() => {
+    document.title = "Login | SpotLight"})
   const [isLoading, setIsLoading] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
