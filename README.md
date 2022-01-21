@@ -1,6 +1,6 @@
 # SpotLight
 
-SpotLight is a web app which uses spotify developer APIs and shows your most listened songs, albums, artists and genres.
+SpotLight is a web app which uses spotify developer APIs and lists your most listened songs, albums, artists and genres.
 
 # Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -16,3 +16,9 @@ SpotLight is a web app which uses spotify developer APIs and shows your most lis
 - cd into the project directory and run `npm install`
 - After the installation is complete, run `npm start`
 - Open  [http://localhost:3000](http://localhost:3000) on a browser.
+
+# Resources
+
+- This project uses the `Spotify Web API` to get all the spotify related data. You can find more about it at the official [Spotify Web API documentation](https://developer.spotify.com/documentation/web-api/reference/#/).
+
+- To get started with `React JS` or brush up your skills, check out the official [React JS Documentation](https://reactjs.org/tutorial/tutorial.html).
