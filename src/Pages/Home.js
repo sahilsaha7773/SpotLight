@@ -72,6 +72,7 @@ function Home() {
   }
 
   useEffect(() => {
+    document.title = "Home | SpotLight"
     const token = params.get('#access_token');
     const expiresIn = params.get('expires_in');
 
