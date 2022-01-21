@@ -8,13 +8,21 @@ SpotLight is a web app which uses spotify developer APIs and lists your most lis
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)
 
-# Set Up
+# Setting Up
 
 - Fork the repo to your account.
 - Clone the repo to your local computer `git clone <fork url>`
 - Make sure Node js is installed on your machine (`Node >= 14.0.0 and npm >= 5.6`)
 - cd into the project directory and run `npm install`
-- After the installation is complete, run `npm start`
+- Login or create an account at the [Spotify Developers Dashboard](https://developer.spotify.com/dashboard/applications).
+- Click on the `Create an App` button in the spotify developers dashboard. Fill the details and submit.
+- Note down the `Client ID` of the app just created.
+- Create a file named `.env.local` at the project root directory with the following content:
+ ```
+ REACT_APP_CLIENT_ID=<YOUR CLIENT ID>
+ ```
+ Replace `<YOUR CLIENT ID>` with the one you got from the spotify console.
+- Now run `npm start`
 - Open  [http://localhost:3000](http://localhost:3000) on a browser.
 
 # Resources
