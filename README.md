@@ -12,7 +12,7 @@ SpotLight is a web app which uses spotify developer APIs and shows your most lis
 
 - Fork the repo to your account.
 - Clone the repo to your local computer `git clone <fork url>`
-- Make sure Node js is installed on your machine (Node >= 14.0.0 and npm >= 5.6)
+- Make sure Node js is installed on your machine (`Node >= 14.0.0 and npm >= 5.6`)
 - cd into the project directory and run `npm install`
 - After the installation is complete, run `npm start`
 - Open  [http://localhost:3000](http://localhost:3000) on a browser.
