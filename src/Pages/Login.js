@@ -16,7 +16,8 @@ function Login() {
     <div>
       <div className={styles.loginCard}>
         <i class="fab fa-spotify" style={{
-          fontSize: "100px"
+          fontSize: "100px",
+          marginBottom: "20px"
         }}></i>
         <h1>Welcome to SpotLight</h1>
         <hr className={styles.underline} />

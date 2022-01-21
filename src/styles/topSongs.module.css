@@ -1,0 +1,48 @@
+.topSongs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.songCard {
+  display: flex;
+  margin: 20px 20px;
+  border-radius: 20px;
+  width: 45%;
+  padding: 20px;
+  background-color: rgb(39, 39, 39); 
+}
+
+.songImage {
+  width: 200px;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.songControl > .audioBtn {
+  visibility: hidden;
+}
+.songControl:hover .audioBtn {
+  visibility: visible;
+}
+
+.playOnSpot {
+  padding: 10px;
+  /* border: 2px solid; */
+  /* background: #58ba55; */
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+.playOnSpot > i {
+  margin-left: 5px;
+}
+.playOnSpot:hover {
+  background: #58ba55;
+  cursor: pointer;
+}

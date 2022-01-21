@@ -6,6 +6,8 @@ import Avatar from 'react-avatar';
 import millify from 'millify';
 import styles from '../styles/home.module.css';
 import ProgressBar from "@ramonak/react-progress-bar";
+import TopArtists from '../components/TopArtists';
+import TopSongs from '../components/TopSongs';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -21,8 +23,7 @@ function Home() {
   const [topArtists, setTopArtists] = useState();
   const [topTracks, setTopTracks] = useState();
   const [genresMap, setGenresMap] = useState(new Map());
-  const [play, setPlay] = useState(-1);
-  const [audio, setAudio] = useState(new Audio());
+
   const [genCount, setGenCount] = useState(0);
 
   // Get User Profile and Store in local storage 
@@ -100,7 +101,8 @@ function Home() {
         genMap.set(gen[j], prevCount + 1);
       }
     }
-    setGenresMap(genMap);
+    var nm = new Map([...genMap].sort((a, b) => b[1] - a[1]));
+    setGenresMap(nm);
     setGenCount(a);
     console.log(genMap.entries());
   }, [topArtists]);
@@ -126,106 +128,27 @@ function Home() {
           <h2>{(user?.followers?.total)} Followers</h2>
         </div>
         <div>
-          <h1 style={{
-            margin: " 0 20px"
-
-          }}>Top Artists</h1>
-          <div className={styles.topArtists}>
-            {
-              topArtists?.items?.map((item, ind) => (
-                <div className={styles.artistCard + " zoom"}>
-                  <img src={item?.images[0]?.url} className={styles.artistImage} />
-                  <div className={styles.topGradient}>
-                    <h2 style={{
-                      margin: "0 0 20px 0"
-                    }}>{item.name}</h2>
-                  </div>
-                  <div className={styles.bottomGradient}>
-                    <h3 style={{
-                      margin: "0 0 !important"
-                    }}>{millify(item.followers.total)} Followers</h3>
-                    <h3 style={{
-                      margin: "10px 0"
-                    }}>
-                      {item.genres[0]}
-                    </h3>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+          <TopArtists topArtists={topArtists} />
         </div>
       </div>
+
+      <TopSongs topTracks={topTracks} />
       <div style={{
         textAlign: "left",
-        margin: "40px"
-
       }}>
-        <h1>Top Songs</h1>
-        <h3 style={{
-          margin: "10px 0",
-          opacity: "0.7"
-        }}>Click on the album image to listen to a 30 sec preview</h3>
-        <div className={styles.topSongs}>
-          {topTracks?.items?.map((item, ind) => (
-            <div className={styles.songCard}>
-
-              <h2>#{ind + 1}</h2>
-              <div style={{ position: 'relative' }} className={styles.songControl}>
-                <img src={item.album?.images[0]?.url} className={styles.songImage + " zoom"} onClick={() => {
-                  // var a = new Audio(item.preview_url);
-                  if (play === ind) {
-                    var a = audio;
-                    if (a.paused)
-                      a.play();
-                    else
-                      a.pause();
-                    setAudio(a);
-                    console.log(audio.paused);
-
-                    // setPlay(-1);
-                  } else {
-                    var a = audio;
-                    a.src = item.preview_url;
-                    setAudio(a);
-                    a.play();
-                    setPlay(ind);
-                    console.log(play);
-
-                  }
-                }} />
-                {(play === ind && audio.paused === false) ?
-                  <i className={styles.audioBtn + " fas fa-pause-circle"} style={{
-                    position: 'absolute',
-                    left: '40%',
-                    bottom: '45%',
-                    fontSize: "40px",
-                    textShadow: "rgb(0 0 0) 2px 2px 10px"
-                  }}></i> :
-                  <i className={styles.audioBtn + " fas fa-play-circle"} style={{
-                    position: 'absolute',
-                    left: '40%',
-                    bottom: '45%',
-                    fontSize: "40px",
-                    textShadow: "rgb(0 0 0) 2px 2px 10px"
-                  }}></i>}
+        {
+          // genresMap.sort();
+          [...genresMap].map((key, ind) => {
+            var val = key[1];
+            var p = val * 100 / genresMap.size;
+            console.log(val, key, p, genCount);
+            return (
+              <div style={{ margin: "20px" }}>
+                <h1>#{ind + 1} {key[0].toUpperCase()} : {millify(val, { precision: 1 })} ({p.toFixed(2)}%)</h1>
               </div>
-              <div>
-                <h2>{item.name}</h2>
-                <h3 style={{
-                  margin: "10px 0"
-                }}>{item.artists.map((artist, ind) => {
-                  if (ind != 0)
-                    return (", " + artist.name);
-                  else return (artist.name)
-                })}</h3>
-                <br />
-                <br />
-                <a href={item.external_urls.spotify} target="_blank" className={styles.playOnSpot}>Play on Spotify <i class="fab fa-spotify"></i></a>
-              </div>
-            </div>
-          ))}
-        </div>
+            )
+          })
+        }
       </div>
       {/* <ProgressBar completed={60} /> */}
     </div>
