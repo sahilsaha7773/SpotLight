@@ -17,6 +17,7 @@ SpotLight is a web app which uses spotify developer APIs and lists your most lis
 - Login or create an account at the [Spotify Developers Dashboard](https://developer.spotify.com/dashboard/applications).
 - Click on the `Create an App` button in the spotify developers dashboard. Fill the details and submit.
 - Note down the `Client ID` of the app just created.
+- Go to your app `Edit Settings` and add `http://localhost:3000` as a redirect URI.
 - Create a file named `.env.local` at the project root directory with the following content:
  ```
  REACT_APP_CLIENT_ID=<YOUR CLIENT ID>
