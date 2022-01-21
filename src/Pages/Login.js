@@ -8,7 +8,7 @@ function Login() {
     e.preventDefault();
     setIsLoading(true);
     var scope = "user-read-playback-state user-read-currently-playing user-modify-playback-state user-read-private user-read-email user-follow-modify user-follow-read user-library-modify user-library-read streaming user-read-playback-position user-top-read user-read-recently-played playlist-modify-private playlist-read-collaborative playlist-read-private playlist-modify-public";
-    const url = 'https://accounts.spotify.com/authorize?response_type=token&client_id=' + api.CLIENT_ID + '&scope=' + scope + '&redirect_uri=' + api.REDIRECT_URI;
+    const url = 'https://accounts.spotify.com/authorize?response_type=token&client_id=' + process.env.REACT_APP_CLIENT_ID + '&scope=' + scope + '&redirect_uri=' + api.REDIRECT_URI;
     console.log(url);
     window.location.href = url;
   }
