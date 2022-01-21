@@ -41,7 +41,7 @@ function Home() {
         if (data.error?.status === 401) {
           navigate('/login');
         }
-        // console.log(data);
+        console.log(data);
         localStorage.setItem("spotUser", JSON.stringify(data));
         setUser(data);
         setIsLoading(false);
@@ -104,7 +104,7 @@ function Home() {
     var nm = new Map([...genMap].sort((a, b) => b[1] - a[1]));
     setGenresMap(nm);
     setGenCount(a);
-    console.log(genMap.entries());
+    // console.log(genMap.entries());
   }, [topArtists]);
   return (
     <div>
@@ -116,17 +116,6 @@ function Home() {
         // overflow: "scroll",
         // gridTemplateColumns: "auto auto"
       }}>
-        <div className={styles.profileCard}>
-          <Avatar style={{
-            marginTop: "60px",
-            border: "8px solid white"
-          }} name={user?.display_name} src={user?.images[0]?.url} size={200} round={true} />
-          <h1 style={{
-            margin: "20px",
-            fontSize: "40px"
-          }}>{user?.display_name}</h1>
-          <h2>{(user?.followers?.total)} Followers</h2>
-        </div>
         <div>
           <TopArtists topArtists={topArtists} />
         </div>
@@ -136,6 +125,7 @@ function Home() {
       <div style={{
         textAlign: "left",
       }}>
+        <h1>Top Genres</h1>
         {
           // genresMap.sort();
           [...genresMap].map((key, ind) => {
