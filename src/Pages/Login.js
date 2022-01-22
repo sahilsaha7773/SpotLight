@@ -20,7 +20,7 @@ function Login() {
     window.location.href = url;
   };
   useEffect(() => {
-    document.title = "Login";
+    document.title = "Login | SpotLight";
   }, []);
   return (
     <div>
