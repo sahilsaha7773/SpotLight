@@ -28,6 +28,12 @@ function TopArtists({ topArtists }) {
                 }}>
                   {item.genres[0]}
                 </h3>
+                <h3 style={{
+                  margin: "10px 0"
+                }}>
+                   { item.popularity } Popularity
+                </h3>
+
               </div>
             </div>
           ))
