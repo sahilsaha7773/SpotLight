@@ -26,6 +26,16 @@ SpotLight is a web app which uses spotify developer APIs and lists your most lis
 - Now run `npm start`
 - Open  [http://localhost:3000](http://localhost:3000) on a browser.
 
+# Folder Structure
+```
+├── src/
+    ├── Pages/              Code for the pages
+    ├── components/         UI Components
+    ├── config/             API configs
+    ├── styles/             CSS Files
+```
+
+
 # Resources
 
 - This project uses the `Spotify Web API` to get all the spotify related data. You can find more about it at the official [Spotify Web API documentation](https://developer.spotify.com/documentation/web-api/reference/#/).
