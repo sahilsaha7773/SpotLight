@@ -24,9 +24,17 @@ function TopArtists({ topArtists }) {
                   margin: "0 0 !important"
                 }}>{millify(item.followers.total)} Followers</h3>
                 <h3 style={{
-                  margin: "10px 0"
+                  margin: "10px 0",
+                  display:"inline-block"
                 }}>
                   {item.genres[0]}
+                </h3>
+                <h3 style={{
+                  margin: "10px 0",
+                  display:"inline-block",
+                  float:"right"
+                }}>
+                  &#128293;{item.popularity}
                 </h3>
               </div>
             </div>
