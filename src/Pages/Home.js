@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from '../config/api.json';
 import Avatar from 'react-avatar';
@@ -108,7 +109,9 @@ function Home() {
   }, [topArtists]);
   return (
     <div>
-
+      <Helmet>
+        <title>Home | SpotLight</title>
+      </Helmet>
       <div style={{
         textAlign: "left",
         margin: "40px",

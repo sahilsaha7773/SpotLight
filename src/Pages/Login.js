@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet'
 import styles from '../styles/login.module.css';
 import api from '../config/api.json';
 
@@ -14,6 +15,9 @@ function Login() {
   }
   return (
     <div>
+      <Helmet>
+        <title>Login | SpotLight</title>
+      </Helmet>
       <div className={styles.loginCard}>
         <i class="fab fa-spotify" style={{
           fontSize: "100px",
