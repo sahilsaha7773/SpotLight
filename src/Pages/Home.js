@@ -86,7 +86,11 @@ function Home() {
     getMe();
     getTopAlbAndArt();
   }, []);
-
+  
+  useEffect(() => {
+    document.title = "Home | SpotLight"
+  }, [])
+  
   useEffect(() => {
     const genMap = new Map();
     var items = topArtists?.items;
