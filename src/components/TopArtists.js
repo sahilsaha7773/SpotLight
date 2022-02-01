@@ -3,6 +3,12 @@ import React from 'react';
 import styles from '../styles/topArtists.module.css';
 
 function TopArtists({ topArtists }) {
+  function openArtist(artistURL){
+    window.open(
+      artistURL,
+      '_blank'
+    );
+  }
   return (
     <div>
       <h1 style={{
@@ -12,7 +18,7 @@ function TopArtists({ topArtists }) {
       <div className={styles.topArtists}>
         {
           topArtists?.items?.map((item, ind) => (
-            <div className={styles.artistCard + " zoom"}>
+            <div className={styles.artistCard + " zoom"} onClick={()=>openArtist(item?.external_urls.spotify)}>
               <img src={item?.images[0]?.url} className={styles.artistImage} />
               <div className={styles.topGradient}>
                 <h2 style={{
