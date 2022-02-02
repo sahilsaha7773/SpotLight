@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/login.module.css';
 import api from '../config/api.json';
 
@@ -12,6 +12,11 @@ function Login() {
     console.log(url);
     window.location.href = url;
   }
+  
+  useEffect(() => {
+    document.title = "Login | SpotLight"
+  }, [])
+  
   return (
     <div>
       <div className={styles.loginCard}>
