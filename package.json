@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "base-64": "^1.0.0",
     "dotenv": "^14.2.0",
+    "framer-motion": "^6.2.3",
     "js-cookie": "^3.0.1",
     "millify": "^4.0.0",
     "react": "^17.0.2",
