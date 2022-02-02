@@ -1,47 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quintessential&display=swap');
 .loginCard {
-  /* box-shadow: 8px 10px 20px rgba(255, 255, 255, 0.2); */
+  box-shadow: 2px 1px 1.5rem rgba(234, 240, 235, 0.2);
   width: fit-content;
   margin: 100px auto;
   padding: 60px 80px;
   border-radius: 20px;
   max-width: 500px;
   text-align: center;
+  animation: move 5s infinite;
+}
+@keyframes move {
+  50%{
+    box-shadow: 0.3rem 1px 1rem #1db95480;
+  }
+  
+}
+.wlcm{
+ text-shadow: 2px 1px #37e674;
+ font-family: 'Quintessential', cursive;
+ letter-spacing: 2px;
+}
+.appname
+{
+  background-image: linear-gradient(
+    -225deg,
+    #1DB954 0%,
+    white 29%,
+    #1DB954 67%,
+    white 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  /* display: inline-block; */
+     padding-bottom: 5px;
+     font-family: 'Playfair Display', serif;
+font-family: 'Quintessential', cursive;
+letter-spacing: 5px;
+font-weight: bold;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .loginBtn {
-  background-color: #1DB954;
-  color: white;
+  background-color:#1DB954;
+  color: rgb(27, 26, 26);
   font-weight: bold;
   margin-top: 20px;
   font-size: 20px;
   border: 0;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   border-radius: 10px;
   transition: all 0.1s ease-in;
+  box-shadow: 1px 1px 1px 1px rgb(126, 179, 110);
 }
 .loginBtn:hover {
   background-color: #17171a;
   color:white;
-  border: 2px solid #FFF;
+  border: 2px solid rgb(5, 209, 107);
   cursor: pointer;
+  box-shadow: 0;
 }
 .loginBtn>i {
   font-size: 20px;
   margin-right: 5px;
 }
+.loginBtn:hover>i{
+  color:#1DB954; 
+}
 .underline {
   border-radius: 8px;
   border: none;
   margin: 20px auto;
-  height: 10px;
-  width: 100px;
-  background: #58ba55;
+  height: 5px;
+  width: 50px;
+  background: linear-gradient(90deg , #58ba55,white);
 }
 
 .subtitle {
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
   color: #c1c1c1;
-  /* opacity: 0.5; */
+   opacity: 0.5;
 }

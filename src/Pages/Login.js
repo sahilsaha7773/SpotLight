@@ -13,17 +13,21 @@ function Login() {
     window.location.href = url;
   }
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.loginCard}>
+        <h1 className={styles.wlcm}>Welcome</h1><br></br>
         <i class="fab fa-spotify" style={{
-          fontSize: "100px",
-          marginBottom: "20px"
+          fontSize: "40px",
+          marginBottom: "20px",
+        color:"#1DB954",
+        
         }}></i>
-        <h1>Welcome to SpotLight</h1>
+        <h1 className={styles.appname}>SpotLight</h1>
         <hr className={styles.underline} />
-        <p className={styles.subtitle}>Adipisicing sint mollit aute ut in irure consectetur qui et deserunt. Velit velit enim voluptate ipsum elit anim laborum fugiat fugi</p>
+        <p className={styles.subtitle}>Adipisicing sint mollit aute ut in irure consectetur qui et deserunt. Velit velit e</p>
+       
         <button className={styles.loginBtn} onClick={handleLogin}>
-          <i class="fab fa-spotify"></i> Login Using Spotify
+          <i class="fab fa-spotify"></i> Login 
         </button>
       </div>
     </div>
