@@ -93,6 +93,10 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    document.title = "Home | SpotLight";
+  }, []);
+
+  useEffect(() => {
     const genMap = new Map();
     var items = topArtists?.items;
     var a = genCount;
