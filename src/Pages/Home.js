@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
-import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState  } from 'react'
+import { useLocation, useNavigate ,Link  } from 'react-router-dom';
 import api from '../config/api.json';
 import Avatar from 'react-avatar';
 import millify from 'millify';
@@ -112,6 +112,9 @@ function Home() {
   }, [topArtists]);
   return (
     <div>
+ 
+ 
+
 
       <div style={{
         textAlign: "left",
@@ -122,7 +125,7 @@ function Home() {
       }}>
         <div>
           <TopArtists topArtists={topArtists} />
-        </div>
+        </div> 
       </div>
 
       <TopSongs topTracks={topTracks} />
