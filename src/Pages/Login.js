@@ -24,7 +24,7 @@ function Login() {
         }}></i>
         <h1 className={styles.appname}>SpotLight</h1>
         <hr className={styles.underline} />
-        <p className={styles.subtitle}>Adipisicing sint mollit aute ut in irure consectetur qui et deserunt. Velit velit e</p>
+        <p className={styles.subtitle}>Adipisicingconsectetur qui et deserunt. Velit velit e</p>
        
         <button className={styles.loginBtn} onClick={handleLogin}>
           <i class="fab fa-spotify"></i> Login 
