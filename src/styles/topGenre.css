@@ -1,5 +1,5 @@
 .topGenre {
-  height: 120vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -37,11 +37,11 @@
 }
 
 .carousel {
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   padding-top: 50px;
-  cursor: grab;
-  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .container {
