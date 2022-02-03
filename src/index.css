@@ -2,31 +2,38 @@
   margin: 0;
   padding: 0;
 }
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   height: 100%;
   background-color: #17171a;
   color: white;
-  font-family: 'Lato';
+  font-family: "Lato";
 }
+
+.body {
+  overflow-x: hidden;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-  ::-webkit-scrollbar-track {
-  background: transparent; 
+::-webkit-scrollbar-track {
+  background: transparent;
 }
-  ::-webkit-scrollbar-thumb {
-  background: #1DB954; 
-    border-radius:10px;
+::-webkit-scrollbar-thumb {
+  background: #1db954;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  
-  background: #1DB954; 
-} 
+  background: #1db954;
+}
 .zoom {
   transition: all 0.2s;
   z-index: 1000;

@@ -1,0 +1,97 @@
+.topGenre {
+  height: 120vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.topGenre h1 {
+  margin-left: 30px;
+  margin-bottom: 3vh;
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+.inner {
+  display: flex;
+  min-width: 80%;
+}
+
+.topCount {
+  min-width: 10rem;
+  min-height: 15rem;
+  text-align: center;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.carousel {
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 10px;
+  border: 2px solid rgb(27, 27, 27);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container:hover {
+  transform: translateY(-40px);
+  background-color: #1db954;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-weight: bold;
+  font-size: 7rem;
+  color: rgba(255, 255, 255, 0.15);
+}
+.genre {
+  font-size: 2rem;
+}
+
+.perc-c {
+  margin: 0 10%;
+  width: 80%;
+  height: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+.perc {
+  height: 100%;
+  background-color: #1db954;
+  border-radius: 5px;
+}
+
+.container:hover .perc {
+  background-color: rgb(37, 37, 37);
+}
