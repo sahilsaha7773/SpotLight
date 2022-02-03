@@ -42,14 +42,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+ flex-direction: column;
+ 
 }
 
 .songCard {
   display: flex;
-  margin: 20px 20px;
+ 
   border-radius: 20px;
-  width: 45%;
-  padding: 20px;
+
+  margin: 20px auto;
+  padding: 10px;
   background-color: rgb(39, 39, 39); 
 }
 
