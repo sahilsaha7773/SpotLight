@@ -28,10 +28,6 @@ function Home() {
 
   const [genCount, setGenCount] = useState(0);
 
-  // Top Genres
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-
   // Get User Profile and Store in local storage
   const getMe = () => {
     setIsLoading(true);
@@ -115,10 +111,6 @@ function Home() {
     // console.log(genMap.entries());
   }, [topArtists]);
 
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
-
   return (
     <div>
       <div
@@ -145,12 +137,8 @@ function Home() {
         <h1>Top Genres</h1>
         <div className="count">
           {
-            <motion.div ref={carousel} className="carousel">
-              <motion.div
-                drag="x"
-                dragConstraints={{ right: 0, left: -width }}
-                className="inner"
-              >
+            <div className="carousel">
+              <div className="inner">
                 {
                   // genresMap.sort();
 
@@ -160,8 +148,8 @@ function Home() {
                     console.log(val, key, p, genCount);
                     var prog = p.toFixed(2);
                     return (
-                      <motion.div className="topCount">
-                        <motion.div className="container">
+                      <div className="topCount">
+                        <div className="container">
                           <div className="number">{ind + 1}</div>
                           <div className="genre">{key[0].toUpperCase()}</div>
                           <div className="songs">
@@ -174,13 +162,13 @@ function Home() {
                             ></div>
                           </div>
                           {/* {p.toFixed(2)}% */}
-                        </motion.div>
-                      </motion.div>
+                        </div>
+                      </div>
                     );
                   })
                 }
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           }
         </div>
       </div>

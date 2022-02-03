@@ -37,11 +37,11 @@
 }
 
 .carousel {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
   padding-top: 50px;
-  cursor: grab;
-  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .container {
