@@ -60,7 +60,7 @@ function TopSongs({ topTracks }) {
                   textShadow: "rgb(0 0 0) 2px 2px 10px"
                 }}></i>}
             </div>
-            <div>
+            <div className={styles.songDetails} >
               <h2>{item.name}</h2>
               <h3 style={{
                 margin: "10px 0"
@@ -69,9 +69,9 @@ function TopSongs({ topTracks }) {
                   return (", " + artist.name);
                 else return (artist.name)
               })}</h3>
-              <br />
-              <br />
+              <div className={styles.CentreplayOnSpot}>
               <a href={item.external_urls.spotify} target="_blank" className={styles.playOnSpot}>Play on Spotify <i class="fab fa-spotify"></i></a>
+               </div>
             </div>
           </div>
         ))}

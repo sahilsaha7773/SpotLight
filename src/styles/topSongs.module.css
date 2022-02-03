@@ -23,6 +23,9 @@
 .songControl > .audioBtn {
   visibility: hidden;
 }
+.songControl{
+  height: 200px;
+}
 .songControl:hover .audioBtn {
   visibility: visible;
 }
@@ -46,3 +49,67 @@
   background: #58ba55;
   cursor: pointer;
 }
+
+@media screen and (max-width:1010px) {
+  .songDetails{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+  }
+  .songCard {
+    display: flex;
+    margin: 20px auto;
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;}
+
+    .topSongs {
+      flex-direction: column;
+    }
+
+    .songImage {
+      margin-top: 20px;
+     
+      }
+
+    .CentreplayOnSpot{
+      width: 80%;
+      margin-top: 30px;
+     }
+
+    .playOnSpot:hover {
+      background: #58ba55;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .playOnSpot {
+      padding: 0px;
+    }
+
+    
+    
+
+  }
+
+  @media screen and (max-width: 642px) {
+    .songCard{
+     width: 80%;
+    }
+    .songImage {
+      width: 160px;
+     
+    }
+    .songDetails{
+      margin-top: 30px;}
+
+   
+  }
+
+
+
+ 
