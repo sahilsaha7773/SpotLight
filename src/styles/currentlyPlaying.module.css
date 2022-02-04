@@ -1,0 +1,34 @@
+.currentframe {
+    display: flex;
+   margin-left: 40px;
+   flex-direction:row;
+   align-items:flex-start ;
+   justify-content: space-between;
+   
+   width: 70%;  
+   
+   padding: 20px;
+    
+  }
+
+  .currentCard{
+      margin-top: 80px;
+      background-color: rgb(39, 39, 39);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 30px;
+      border-radius: 27px;
+      
+  }
+
+  .currentSongDetails{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-left: 20px;
+      padding: 20px;
+    
+  }
