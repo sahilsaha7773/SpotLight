@@ -10,6 +10,7 @@ import TopArtists from "../components/TopArtists";
 import TopSongs from "../components/TopSongs";
 import "../styles/topGenre.css";
 import { motion } from "framer-motion";
+import CurrentlyPlaying from "../components/CurrentlyPlaying";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -113,6 +114,7 @@ function Home() {
 
   return (
     <div>
+      <CurrentlyPlaying/>
       <div
         style={{
           textAlign: "left",

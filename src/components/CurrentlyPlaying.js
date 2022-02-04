@@ -58,7 +58,7 @@ function CurrentlyPlaying()
               >Currently Playing</h1>
             <div className={styles.currentCard}>
                 <div className={styles.imgBox}>
-                    <img src={currentimg} alt="" />
+                    <img src={currentimg} className={styles.img} alt="" />
                 </div>
 
                 <div className={styles.currentSongDetails}>
