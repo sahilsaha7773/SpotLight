@@ -114,7 +114,10 @@ function Home() {
 
   return (
     <div>
+
+      <div className={styles.topCurrent} >
       <CurrentlyPlaying/>
+      <div>
       <div
         style={{
           textAlign: "left",
@@ -127,6 +130,9 @@ function Home() {
         <div>
           <TopArtists topArtists={topArtists} />
         </div>
+      </div>
+      </div>
+
       </div>
 
       <TopSongs topTracks={topTracks} />

@@ -55,23 +55,19 @@ function CurrentlyPlaying()
     return(
         <div className={styles.currentframe} >
             <h1
-              >Currently Playing</h1>
+              > Playing</h1>
             <div className={styles.currentCard}>
                 <div className={styles.imgBox}>
                     <img src={currentimg} className={styles.img} alt="" />
                 </div>
 
                 <div className={styles.currentSongDetails}>
-                    <h1>
+                    <h1  className={styles.currentSongDetailsH1}>
                      {currentSong.item.name}
                     </h1>
 
-                    <h2
-                     style={{
-                      
-                      marginTop: "10px",
-                     
-                    }}>
+                    <h2 className={styles.currentSongDetailsH2}
+                   >
                        {singer}
                     </h2>
                 </div>
