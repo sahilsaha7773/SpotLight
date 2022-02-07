@@ -4,10 +4,14 @@
    flex-direction:column;
    align-items:flex-start ;
    justify-content: space-between;
-   width: 45vw;
+   width:40vw;
    padding: 20px;
    margin-top: 5px;
     
+  }
+
+  .notPlaying{
+      width:auto;
   }
 
   .currentCard{
@@ -56,6 +60,7 @@
 
     .currentSongDetailsH2{
         font-size: 18px;
+        margin-left: 20px;
        
     }
   
@@ -86,6 +91,7 @@
   
     .currentSongDetailsH1{
         font-size: 20px;
+        margin-left: 10px;
     }
 
     .currentCard{
@@ -115,6 +121,7 @@
 
       .currentSongDetailsH2{
         margin-top: 10px;
+        margin-left: 4px;
        
     }
 

@@ -10,7 +10,9 @@ import TopArtists from "../components/TopArtists";
 import TopSongs from "../components/TopSongs";
 import "../styles/topGenre.css";
 import { motion } from "framer-motion";
-import CurrentlyPlaying from "../components/CurrentlyPlaying";
+import Current from "../components/Current";
+
+
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -21,6 +23,7 @@ function Home() {
   const params = new URLSearchParams(window.location.hash);
 
   // States
+
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [topArtists, setTopArtists] = useState();
@@ -74,6 +77,55 @@ function Home() {
       });
   };
 
+
+
+ 
+  
+  
+   
+  
+   
+    
+  
+   
+  
+  
+    
+   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     const token = params.get("#access_token");
     const expiresIn = params.get("expires_in");
@@ -87,6 +139,7 @@ function Home() {
     }
     getMe();
     getTopAlbAndArt();
+   
   }, []);
 
   useEffect(() => {
@@ -112,11 +165,46 @@ function Home() {
     // console.log(genMap.entries());
   }, [topArtists]);
 
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
 
       <div className={styles.topCurrent} >
-      <CurrentlyPlaying/>
+      <Current/>
       <div>
       <div
         style={{

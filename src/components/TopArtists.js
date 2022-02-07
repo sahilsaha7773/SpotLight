@@ -10,7 +10,7 @@ function TopArtists({ topArtists }) {
     );
   }
   return (
-    <div>
+    <div className={styles.topArtistsFrame}>
       <h1 style={{
         margin: " 0 20px"
 
