@@ -2,6 +2,7 @@
   display:flex;
   margin:0 0 40px 0;
   overflow-x: scroll;
+  width:55vw;
   
 }
 
@@ -36,5 +37,15 @@
   border-radius: 0 0 20px 20px;
   padding: 20px 10px;
   background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0));
+
+}
+
+@media screen and (max-width:760px) {
+
+  .topArtists {
+    
+    width: 80vw;
+    
+  }
 
 }

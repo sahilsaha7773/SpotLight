@@ -38,6 +38,15 @@
 
 }
 
+.topCurrent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 95vw;
+  
+}
+
 .topSongs {
   display: flex;
   flex-wrap: wrap;
@@ -94,4 +103,16 @@
   text-align: center;
   margin: 0 40px;
   /* position: fixed; */
+}
+
+@media screen and (max-width:760px) {
+
+  .topCurrent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
 }
