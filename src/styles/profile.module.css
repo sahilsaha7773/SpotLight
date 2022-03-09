@@ -1,85 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap");
 
-.frame{
-   
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.frame {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Poppins", sans-serif;
 }
 
-.card{
-   
-    
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    flex-direction: column;
+.card {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 6rem;
+  position: relative;
+  overflow: hidden;
 }
-.imageBox{
-    margin: 20px;
-    width: 200px;
-    height: 200px;
-    user-select: none;
+.imageBox {
+  margin: 20px;
 
-}
-
-.image{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-
+  user-select: none;
 }
 
-.name{
-    color: #16DB63;
-    font-size: 36px;
-    font-weight: 800;
-    text-transform: capitalize;
-
+.image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
 }
-.followerBox{
-    font-weight: 600;
-    background-color: #16DB63;
-    color: black;
-    border-radius: 40px;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    flex-direction:row;
-    padding: 3px 25px;
-    margin: 10px;
-    font-size: 14px;
 
+.name {
+  font-size: 36px;
+
+  text-transform: capitalize;
 }
-.details{
-    font-size: 12px;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    flex-direction:column;
-    min-height: 130px;
-    margin-top: 20px;
-    font-weight: 400;
+.followerBox {
+  font-weight: 200;
+  border: 2px solid #16db63;
+  color: #16db63;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 3px 25px;
+  margin: 10px;
+  font-size: 1.3rem;
+  transition: all 1s;
+  cursor: pointer;
+}
 
+.followerBox:hover {
+  background-color: #16db63;
+  color: black;
+  box-shadow: 0 0 5px #16db63, 0 0 25px #16db63, 0 0 50px #16db63,
+    0 0 200px #16db63;
+}
+
+.details {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 130px;
+  margin-top: 20px;
+  font-weight: 100;
+}
+.details p {
+  font-weight: 600;
+}
+.details p span {
+  font-weight: 100;
+}
+
+.card .border {
+  position: absolute;
+  display: block;
+}
+
+.card .border:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #16db63);
+  animation: animate1 2s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.card .border:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(270deg, transparent, #16db63);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animate2 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.card .border:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #16db63);
+  animation: animate3 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.card .border:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #16db63);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-
-    .image{
-        width: 150px;
-        height: 150px;
-       
-    }
-    .imageBox{
-        margin: 10px;
-        width: 150px;
-        height: 150px;
-       
-    
-    }
+  .image {
+    width: 150px;
+    height: 150px;
   }
+  .imageBox {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+  }
+}
